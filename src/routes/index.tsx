@@ -64,7 +64,7 @@ function Index() {
       toast.success("Weigh-in logged");
       invalidate();
     },
-    onError: () => toast.error("Could not save entry"),
+    onError: (error) => toast.error("Could not save entry", { description: error.message }),
   });
 
   const deleteMutation = useMutation({
